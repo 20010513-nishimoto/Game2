@@ -11,7 +11,9 @@ public:
 	void Update();
 	void Render();
 
-	
+	int mJump;
+
+	int mVj;
 
 
 	int mAniCnt;

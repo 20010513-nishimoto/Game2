@@ -4,7 +4,9 @@
 #include "CInput.h"
 #include <math.h>
 
+#define G  1
 
+#define VJ0 18
 
 //extern：他のソースファイルの外部変数にアクセスする宣言
 extern CTexture Texture;
@@ -17,6 +19,8 @@ CPlayer::CPlayer()
 : mFx(1.0f), mFy(0.0f)
 , FireCount(0)
 , mAniCnt(0)
+, mVj(0)
+, mJump(0)
 {
 	mTag = EPLAYER;
 	spInstance = this;
@@ -44,9 +48,17 @@ void CPlayer::Update() {
 			x = 400 - w;
 		}
 	}
-	
-	
-	
+	//ジャンプ可能か
+	if (mJump == 0 && CKey::Push('J')){
+		//ジャンプ力を速度に設定
+		mVj = VJ0;
+		//フラグに1加算
+		mJump++;
+	}
+	//速度に重力加速度加算
+	mVj -= G;
+	//速度分移動
+	y += mVj;
 	
 
 	//スペースキーで弾発射
@@ -112,7 +124,13 @@ void CPlayer::Collision(CRectangle *ri, CRectangle *ry) {
 			else {
 				//Rectをyだけ移動する
 				y += my;
-				
+				//着地
+				mVj = 0;
+				if (my > 0)
+				{
+					//ジャンプ可能
+					mJump = 0;
+				}
 			}
 		}
 	}
