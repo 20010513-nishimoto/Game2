@@ -91,6 +91,7 @@
     <ClCompile Include="CSceneManager.cpp" />
     <ClCompile Include="CSceneTitle.cpp" />
     <ClCompile Include="CText.cpp" />
+    <ClCompile Include="CObstacle.cpp" />
     <ClCompile Include="Update.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -107,6 +108,7 @@
     <ClInclude Include="CSceneTitle.h" />
     <ClInclude Include="CText.h" />
     <ClInclude Include="CTexture.h" />
+    <ClInclude Include="CObstacle.h" />
     <ClInclude Include="Update.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
