@@ -7,6 +7,7 @@
 #include "CPlayer.h"
 #include "CEnemy.h"
 #include "CText.h"
+#include "CObstacle.h"
 
 void CSceneGame::Init() {
 	//ƒV[ƒ“‚ÌÝ’è
@@ -65,7 +66,6 @@ void CSceneGame::Init() {
 				Map->w = 50;
 				Map->h = 25;
 			}
-			
 		}
 	}
 }
