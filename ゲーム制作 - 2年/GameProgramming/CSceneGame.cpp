@@ -68,6 +68,15 @@ void CSceneGame::Init() {
 			}
 		}
 	}
+	  //10s2—ñ‚ÉCObstacle‚ð”z—ñ‚·‚é
+	  int col = 10, row = 2;
+	  CObstacle* o = new CObstacle();
+	  o->mEnabled = true;
+	  o->x = col * 50 - 500;
+	  o->y = row * -50 + 380;
+	  o->w = 20;
+	  o->h = 20;
+	  o->mEnabled = true;
 }
 
 void CSceneGame::Update() {
